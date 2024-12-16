@@ -55,22 +55,20 @@ public class CheckoutPage extends PageObject {
         Address mainAddress = customer.getAddressList().stream()
                 .filter(address -> address.addressType().contentEquals("primary")).findFirst()
                         .orElse(null);
+        assert mainAddress != null;
         firstName.sendKeys(customer.getFirstName());
         lastName.sendKeys(customer.getLastName());
-        assert mainAddress != null;
-        countryDropdownIcon.click();
-        wait.until(ExpectedConditions.visibilityOf(searchFieldCountry));
-        searchFieldCountry.sendKeys(mainAddress.country().getName());
-        searchFieldCountry.sendKeys(Keys.RETURN);
         postcode.sendKeys(mainAddress.postalCode());
         streetAndNumber.sendKeys(mainAddress.street() + " " + mainAddress.number());
+        email.sendKeys(customer.getEmailAddress());
         city.sendKeys(mainAddress.city());
+        countryDropdownIcon.click();
+        searchFieldCountry.sendKeys(mainAddress.country().getName());
+        searchFieldCountry.sendKeys(Keys.RETURN);
         stateDropdownIcon.click();
         searchFieldState.sendKeys(mainAddress.state().getName());
         searchFieldState.sendKeys(Keys.RETURN);
-        email.sendKeys(customer.getEmailAddress());
     }
-
     public void placeOrder() {
         wait.until(ExpectedConditions.invisibilityOfAllElements(blockOverlay));
         wait.until(ExpectedConditions.elementToBeClickable(placeOrderBtn)).click();
@@ -78,8 +76,7 @@ public class CheckoutPage extends PageObject {
 
     public String checkThankYouOrderText() {
         wait.until(ExpectedConditions.invisibilityOfAllElements(blockOverlay));
-        wait.until(ExpectedConditions.visibilityOf(thankYouOrderText));
 
-        return thankYouOrderText.getText();
+        return wait.until(ExpectedConditions.visibilityOf(thankYouOrderText)).getText();
     }
 }
