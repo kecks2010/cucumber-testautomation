@@ -1,4 +1,4 @@
-package de.mirko_werner.cucumber.pages;
+package de.mirko_werner.cucumber.models;
 
 import java.lang.annotation.*;
 

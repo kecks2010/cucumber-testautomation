@@ -3,6 +3,7 @@ package de.mirko_werner.cucumber.steps;
 import de.mirko_werner.cucumber.pages.CartPage;
 import de.mirko_werner.cucumber.pages.HomePage;
 import de.mirko_werner.cucumber.pages.StorePage;
+import de.mirko_werner.cucumber.pages.components.ProductComponent;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -16,6 +17,7 @@ public class AddToCardSteps {
     private final HomePage homePage = new HomePage();
     private final StorePage storePage = new StorePage();
     private final CartPage cartPage = new CartPage();
+    private final ProductComponent productComponent = new ProductComponent();
 
     @Given("I'm on the store page")
     public void iMOnTheStorePage() {
@@ -29,7 +31,7 @@ public class AddToCardSteps {
 
     @When("I add {string} to the Cart")
     public void iAddToTheCart(String productName) {
-        storePage.addToCart(productName);
+        productComponent.addToCart(productName);
     }
 
     @Then("I see {int} {string} with {string} in the Cart")

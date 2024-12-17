@@ -1,4 +1,4 @@
-package de.mirko_werner.cucumber.pages;
+package de.mirko_werner.cucumber.models;
 
 import de.mirko_werner.cucumber.utils.WebdriverFactory;
 import de.mirko_werner.cucumber.utils.ConfigLoader;

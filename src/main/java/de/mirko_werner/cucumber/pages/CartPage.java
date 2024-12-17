@@ -1,5 +1,7 @@
 package de.mirko_werner.cucumber.pages;
 
+import de.mirko_werner.cucumber.models.EndPoint;
+import de.mirko_werner.cucumber.models.PageObject;
 import org.openqa.selenium.Cookie;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;

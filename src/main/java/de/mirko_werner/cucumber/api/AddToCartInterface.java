@@ -1,7 +1,7 @@
 package de.mirko_werner.cucumber.api;
 
-import de.mirko_werner.cucumber.pages.EndPoint;
-import de.mirko_werner.cucumber.pages.PageObject;
+import de.mirko_werner.cucumber.models.EndPoint;
+import de.mirko_werner.cucumber.models.PageObject;
 import de.mirko_werner.testdata.persistence.models.Product;
 import de.mirko_werner.testdata.repositories.ProductRepository;
 import io.restassured.RestAssured;

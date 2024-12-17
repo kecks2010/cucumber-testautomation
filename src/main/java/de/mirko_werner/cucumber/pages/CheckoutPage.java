@@ -1,5 +1,6 @@
 package de.mirko_werner.cucumber.pages;
 
+import de.mirko_werner.cucumber.models.PageObject;
 import de.mirko_werner.testdata.persistence.models.Address;
 import de.mirko_werner.testdata.persistence.models.Customer;
 import org.openqa.selenium.Keys;
