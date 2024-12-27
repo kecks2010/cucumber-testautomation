@@ -1,6 +1,6 @@
 @Test
 Feature: Checkout a product
-
+  @Debug
   Scenario: Checkout a product as guest customer
     Given I'm a guest customer
       | firstName | lastName |

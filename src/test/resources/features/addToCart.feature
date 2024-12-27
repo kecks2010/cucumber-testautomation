@@ -1,9 +1,8 @@
-@Ignore
 @Test
 Feature: Add to cart
 
   Rule: Add from main page
-
+    @Debug
     Scenario Outline: Add one product to the cart
       Given I'm on the main page
       When I add "<product_name>" to the Cart
@@ -15,7 +14,8 @@ Feature: Add to cart
 
 
   Rule: Add from store page
-
+    @Smoke
+    @Debug
     Scenario: Add on product to the cart
       Given I'm on the store page
       When I add "Basic Blue Jeans" to the Cart
