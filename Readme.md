@@ -9,6 +9,7 @@ To run the test automation, you need the following system requirements:
 * Maven
 * git
 * Chrome
+* Firefox
 
 After that, you have to clone the testdata project first.
 
