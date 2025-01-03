@@ -4,6 +4,7 @@ import de.mirko_werner.cucumber.pages.CartPage;
 import de.mirko_werner.cucumber.pages.HomePage;
 import de.mirko_werner.cucumber.pages.StorePage;
 import de.mirko_werner.cucumber.pages.components.ProductComponent;
+import io.cucumber.java.Before;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -14,10 +15,18 @@ import static org.hamcrest.Matchers.is;
 
 public class AddToCardSteps {
 
-    private final HomePage homePage = new HomePage();
-    private final StorePage storePage = new StorePage();
-    private final CartPage cartPage = new CartPage();
-    private final ProductComponent productComponent = new ProductComponent();
+    private HomePage homePage;
+    private StorePage storePage;
+    private CartPage cartPage;
+    private ProductComponent productComponent;
+
+    @Before
+    public void setupPageObjects() {
+        homePage = new HomePage();
+        storePage = new StorePage();
+        cartPage = new CartPage();
+        productComponent = new ProductComponent();
+    }
 
     @Given("I'm on the store page")
     public void iMOnTheStorePage() {

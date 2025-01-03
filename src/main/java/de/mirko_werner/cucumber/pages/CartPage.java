@@ -55,6 +55,7 @@ public class CartPage extends PageObject {
                 .addCookie(new Cookie(restAssurdCookie.getName(), restAssurdCookie.getValue(), restAssurdCookie.getDomain(),
                 restAssurdCookie.getPath(), restAssurdCookie.getExpiryDate(), restAssurdCookie.isSecured(),
                 restAssurdCookie.isHttpOnly(), restAssurdCookie.getSameSite())));
+
         getWebDriver().navigate().refresh();
     }
 }

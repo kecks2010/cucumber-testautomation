@@ -18,7 +18,7 @@ public class WebdriverFactory {
                 System.setProperty("webdriver.chrome.driver", ConfigLoader.getInstance().getDriverPath(browser));
                 ChromeOptions options = new ChromeOptions();
                 options.setCapability("webSocketUrl", true);
-                options.addArguments("--headless");
+//                options.addArguments("--headless");
                 driver = new ChromeDriver(options);
             }
             case "firefox" -> {
@@ -31,7 +31,7 @@ public class WebdriverFactory {
             default -> throw new IllegalStateException("Unknown browser: " + browser);
         }
         driver.manage().window().maximize();
-        WebdriverFactory.THREAD_LOCAL_DRIVER.set(driver);
+        THREAD_LOCAL_DRIVER.set(driver);
     }
 
     public static WebDriver getDriver() {

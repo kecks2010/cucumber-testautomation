@@ -4,6 +4,7 @@ import de.mirko_werner.cucumber.api.AddToCartInterface;
 import de.mirko_werner.cucumber.pages.CartPage;
 import de.mirko_werner.cucumber.pages.CheckoutPage;
 import de.mirko_werner.testdata.persistence.models.Customer;
+import io.cucumber.java.Before;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -16,10 +17,17 @@ import static org.hamcrest.Matchers.is;
 public class CheckoutAProductSteps {
 
     Customer customer;
-    AddToCartInterface addToCart = new AddToCartInterface();
-    CartPage cartPage = new CartPage();
-    CheckoutPage checkoutPage = new CheckoutPage();
+    AddToCartInterface addToCart;
+    CartPage cartPage;
+    CheckoutPage checkoutPage;
     Cookies cookies;
+
+    @Before
+    public void setupPageObject() {
+        addToCart = new AddToCartInterface();
+        cartPage = new CartPage();
+        checkoutPage = new CheckoutPage();
+    }
 
     @Given("I'm a guest customer")
     public void iAmGuestCustomer(Customer user) {
